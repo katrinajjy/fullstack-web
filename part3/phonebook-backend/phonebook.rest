@@ -1,13 +1,22 @@
-DELETE http://localhost:3003/api/persons/2
+DELETE http://localhost:3003/api/persons/68376a52b962f8c5eb9c58fa
 
 ###
-GET http://localhost:3003/api/persons/2
+GET http://localhost:3003/api/persons/68377130b90421edfb15e879
 
 ###
 POST http://localhost:3003/api/persons
 Content-Type: application/json
 
 {
-  "name": "Emi Fong",
-  "number": "123-456789"
+  "name": "Angel",
+  "number": "112345"
+}
+
+###
+PUT http://localhost:3003/api/persons/68377130b90421edfb15e879
+Content-Type: application/json
+
+{
+  "name": "Khalil Fong",
+  "number": "111-222-3333"
 }
