@@ -116,8 +116,9 @@ const App = () => {
           setTimeout(() => setMessage(null), 3000);
         })
         .catch((error) => {
+          console.log(error.response.data.error);
           setMessageType("error");
-          setMessage("Failed to add person");
+          setMessage(error.response.data.error);
           setTimeout(() => setMessage(null), 3000);
         });
     }
