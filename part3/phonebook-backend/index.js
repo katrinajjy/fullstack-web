@@ -3,7 +3,7 @@ const express = require("express");
 const Person = require("./models/person");
 
 const morgan = require("morgan");
-const path = require("path");
+//const path = require("path");
 
 const app = express();
 
@@ -59,7 +59,7 @@ app.get("/api/persons/:id", (request, response, next) => {
 // Delete a person
 app.delete("/api/persons/:id", (request, response, next) => {
   Person.findByIdAndDelete(request.params.id)
-    .then((result) => {
+    .then(() => {
       console.log("Deleting person with ID:", request.params.id);
       response.status(204).end();
     })

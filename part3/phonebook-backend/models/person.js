@@ -8,16 +8,12 @@ console.log("connecting to", url);
 
 mongoose
   .connect(url)
-  .then((result) => {
+  .then(() => {
     console.log("connected to MongoDB");
   })
   .catch((error) => {
     console.log("error connecting to MongoDB:", error.message);
   });
-
-const password = process.argv[2];
-const name = process.argv[3];
-const number = process.argv[4];
 
 const personSchema = new mongoose.Schema({
   name: {
@@ -37,8 +33,6 @@ const personSchema = new mongoose.Schema({
     },
   },
 });
-
-const Person = mongoose.model("Person", personSchema);
 
 personSchema.set("toJSON", {
   transform: (document, returnedObject) => {

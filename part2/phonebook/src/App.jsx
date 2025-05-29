@@ -88,6 +88,7 @@ const App = () => {
           })
           .catch((error) => {
             // Handle 404 error
+            console.error("Update failed:", error);
             setMessageType("error");
             setMessage(
               `Information of ${existingPerson.name} has already been removed from server`
@@ -135,6 +136,7 @@ const App = () => {
           setPersons(persons.filter((p) => p.id !== id));
         })
         .catch((error) => {
+          console.error("Delete failed:", error);
           setMessageType("error");
           setMessage(
             `Information of ${person.name} has already been removed from server`
